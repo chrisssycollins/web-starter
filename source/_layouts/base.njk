@@ -5,11 +5,11 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	{# {% set css %}
-		{% include "styles.css" %}
+	{% set css %}
+		{% include "_css/styles.css" %}
 	{% endset %}
 	<!-- Inline CSS -->
-	<style>{{ css | cssmin | safe }}</style> #}
+	<style>{{ css | cssmin | safe }}</style>
 
 	<!-- Try and serve Google Fonts in the most efficent way possible -->
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -38,6 +38,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
+	{% include "site-navigation.njk" %}
 	<main id="main">
 			{{ content | safe }}
 	</main>

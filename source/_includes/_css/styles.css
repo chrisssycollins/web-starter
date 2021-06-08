@@ -1,0 +1,58 @@
+:root {
+	--font-color: #222;
+	--brand: #0065C3;
+	--brand-tint: #005bb0;
+	--background-color: #fdfdfd;
+	--solid: #fff;
+	--link-color: #222;
+	--muted: #767676;
+	--lightest: #eee;
+	--transparency-1: rgba(0,0,0,0.05);
+	--border-radius: .2rem;
+}
+
+.container {
+	max-width: 1020px;
+	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box
+}
+
+html {
+	font-family: 'Inter', serif;
+	font-size: calc(.95em + .3vw);
+	text-rendering: optimizeSpeed;
+	line-height: 1.6;
+}
+
+body {
+	background: var(--background-color);
+	color: var(--font-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+ * Utility class to hide content visually while keeping it screen reader-accessible.
+ * Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html 
+ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	-webkit-clip-path: inset(100%);
+	        clip-path: inset(100%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+@media only screen and (min-width: 600px) {
+
+}

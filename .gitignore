@@ -64,7 +64,7 @@ typings/
 .DS_Store
 
 # Build 
-dist
+build
 
 # Don't commit temp build files
 src/static/app.bundled.js

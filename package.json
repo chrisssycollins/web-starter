@@ -1,0 +1,21 @@
+{
+  "name": "eleventy-web-starter",
+  "version": "2.0.0",
+  "description": "Robust Eleventy Boilerplate",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": ["eleventy", "11ty", "html5", "boilerplate"],
+  "author": "Chris Collins",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-cache-assets": "^2.2.1",
+    "@11ty/eleventy-img": "^0.9.0",
+    "clean-css": "^5.1.2",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.26.0",
+    "terser": "^5.7.0"
+  }
+}

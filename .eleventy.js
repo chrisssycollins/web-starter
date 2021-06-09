@@ -2,6 +2,45 @@ const { DateTime } = require("luxon");
 const { minify } = require("terser");
 const CleanCSS = require("clean-css");
 const htmlmin = require("html-minifier");
+const Image = require("@11ty/eleventy-img");
+
+async function imageShortcode(src, alt, relative = false, sizes = "100vw") {
+	let urlPath = '/static';
+	let outputDir = `./build/static`;
+
+	if (relative) {
+		src = './source' + this.page.url + src;
+		outputDir = `./build/${this.page.url}`;
+		urlPath = this.page.url;
+	}
+
+	if (alt === undefined) {
+		// You bet we throw an error on missing alt (alt="" works okay)
+		throw new Error(`Missing \`alt\` on responsiveimage from: ${src}`);
+	}
+
+	let metadata = await Image(src, {
+		widths: [300, 600, 1020],
+		formats: ['webp', 'jpeg'],
+		outputDir: outputDir,
+		urlPath: urlPath
+	});
+
+	let lowsrc = metadata.jpeg[0];
+
+	return `<picture>
+	${Object.values(metadata).map(imageFormat => {
+		return `  <source type="${imageFormat[0].sourceType}" srcset="${imageFormat.map(entry => entry.srcset).join(", ")}" sizes="${sizes}">`;
+	}).join("\n")}
+		<img
+			src="${lowsrc.url}"
+			width="${lowsrc.width}"
+			height="${lowsrc.height}"
+			alt="${alt}"
+			loading="lazy"
+			decoding="async">
+	</picture>`;
+}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("source/static");
@@ -68,6 +107,9 @@ module.exports = function (eleventyConfig) {
 
     return content;
   });
+
+	// Image Shortcode
+	eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
 
   return {
     dir: {

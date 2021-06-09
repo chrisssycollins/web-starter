@@ -12,8 +12,9 @@ layout: "base.njk"
 
 		{% if featured_image.src %}
 		<figure>
-			<img src="{{ page.url }}{{ featured_image.src }}" alt="{{ featured_image.alt }}">
-
+			{% set src = featured_image.src %}
+			{% set alt = featured_image.alt or "" %}
+			{% image src, alt, true %} 
 			{% if featured_image.caption or featured_image.cite %}
 			<figcaption>
 				{{ featured_image.caption }}

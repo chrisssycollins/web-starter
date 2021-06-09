@@ -15,6 +15,8 @@ featured_image:
 tags:
  - example
  - markdown
+
+templateEngineOverride: njk,md # This is required for using shortcodes within Markdown. 
 ---
 
 ## Overview
@@ -48,6 +50,16 @@ character in a paragraph into a `<br />` tag.
 
 When you *do* want to insert a `<br />` break tag using Markdown, you
 end a line with two or more spaces, then type return.
+
+### Image 
+
+<figure>
+	{% image "sven-vee-fjCbTjHyRMQ-unsplash.jpg", "Car driving through the beautiful highland scenery", true %} 
+	<figcaption>
+			Car driving through the Scottish Highlands.
+			<cite>Photo by <a href="https://unsplash.com/@sven_vee">Sven Vee</a> on <a href="https://unsplash.com/s/photos/scotland">Unsplash</a></cite>
+	</figcaption>
+</figure>
 
 ### Headers
 
@@ -216,6 +228,16 @@ to be indented *twice* -- 8 spaces or two tabs:
 *   A list item with a code block:
 
         <code goes here>
+
+### Another Image
+
+<figure>
+	{% image "jure-tufekcic-_hCJwdcfQEY-unsplash.jpg", "Busy Edinburgh street with buses", true %} 
+	<figcaption>
+			Edinburgh at Golden Hour
+			<cite>Photo by <a href="https://unsplash.com/@tufo">Jure Tufekcic</a> on <a href="https://unsplash.com/s/photos/scotland">Unsplash</a></cite>
+	</figcaption>
+</figure>
 
 ### Code Blocks
 

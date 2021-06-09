@@ -5,7 +5,7 @@
   "scripts": {
     "dev:eleventy": "eleventy --serve",
     "dev:postcss": "postcss source/_assets/css/styles.css -o source/_includes/_css/styles.css -w --verbose",
-		"build:postcss": "NODE_ENV=production postcss source/_assets/css/styles.css -o source/_includes/_css/styles.css --verbose",
+    "build:postcss": "NODE_ENV=production postcss source/_assets/css/styles.css -o source/_includes/_css/styles.css --verbose",
     "build:eleventy": "eleventy"
   },
   "keywords": [

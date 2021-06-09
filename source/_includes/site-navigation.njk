@@ -5,7 +5,11 @@
 	</a>
 
 	<ul>
-		<li><a href="/" class="{{ 'active' if '/' === page.url }}">Home</a></li>
-		<li><a href="/example" class="{{ 'active' if '/example' in page.url }}">Example Page</a></li>
+		<li>
+			<a href="/" class="{{ 'active' if '/' === page.url }}">Home</a>
+		</li>
+		<li>
+			<a href="/example" class="{{ 'active' if '/example' in page.url }}">Example Page</a>
+		</li>
 	</ul>
 </nav>

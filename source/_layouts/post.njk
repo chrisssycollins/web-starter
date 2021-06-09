@@ -1,0 +1,17 @@
+---
+layout: "base.njk"
+---
+
+<div class="container">
+	<header>
+		<h1 class="post-title">{{ title }}</h1>
+
+		<div class="post-meta">
+			<p>Posted <time datetime="{{ date }}">{{ date | postDate }}</time> · by {{ author.name }}</p>
+		</div>
+	</header>
+
+	<article>
+		{{ content | safe }}
+	</article>
+</div>

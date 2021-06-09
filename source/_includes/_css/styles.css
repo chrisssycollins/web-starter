@@ -38,19 +38,97 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 
- * Utility class to hide content visually while keeping it screen reader-accessible.
- * Source: https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html 
- */
-.visually-hidden:not(:focus):not(:active) {
-  clip: rect(0 0 0 0);
-  -webkit-clip-path: inset(100%);
-  clip-path: inset(100%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
+a,
+a:visited {
+  color: var(--brand);
 }
 
-@media only screen and (min-width: 600px) {}
+a:hover {
+  color: var(--brand-tint);
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: solid 0.1rem var(--lightest);
+}
+
+.navigation__logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.navigation a>img {
+  width: 1.6rem;
+  margin-right: 0.5rem;
+}
+
+.navigation ul {
+  margin: 0 -0.5rem;
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.navigation ul li a {
+  padding: 0.5rem 0.5rem;
+  display: block;
+}
+
+.post-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.post-list li a {
+  font-weight: 600;
+}
+
+.post-list li p {
+  font-size: 0.75em;
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.post-title {
+	line-height: 1.25;
+	font-weight: 700;
+}
+
+.post-meta {
+	font-size: 0.75em;
+	margin-top: 0;
+	color: var(--muted);
+}
+
+:not(pre)>code {
+  background-color: var(--lightest);
+  padding: 0.1rem 0.25rem;
+  border-radius: var(--border-radius);
+}
+
+blockquote {
+  background-color: var(--lightest);
+  border-left: 0.5rem solid var(--brand);
+  margin-left: 0;
+  padding: 1rem 2rem;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+pre {
+  overflow: auto;
+  background-color: var(--lightest);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+}
+
+@media only screen and (min-width: 600px) {
+  .navigation ul li a {
+    padding: 0.5rem 1rem;
+  }
+}

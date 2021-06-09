@@ -1,3 +1,20 @@
 ---
 layout: "base.njk"
+
+pagination:
+  data: collections.posts
+  size: 5
 ---
+
+<div class="container">
+	<h2>Posts ({{ collections.posts | length }})</h2>
+
+	<ul class="post-list">
+	{% for post in pagination.items %}
+		<li>
+			<a href="{{ post.url | url }}">{{ post.data.title }}</a>
+			<p>Posted <time datetime="{{ post.date }}">{{ post.date | postDate }}</time> · by {{ post.data.author.name }}</p>
+		</li>
+	{% endfor %}
+	</ul>
+</div>

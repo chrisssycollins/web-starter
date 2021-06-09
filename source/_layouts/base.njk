@@ -6,11 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		{% set css %}
+		{% include "_css/normalise.css" %}
 		{% include "_css/styles.css" %}
 		{% endset %}
 		<!-- Inline CSS -->
 		<style>
-			{{css | cssmin | safe}}
+			{{ css | cssmin | safe }}
 		</style>
 
 		<!-- Try and serve Google Fonts in the most efficent way possible -->
@@ -19,21 +20,21 @@
 		<noscript>
 			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" type="text/css"/>
 		</noscript>
-
-		<title>{% if title %}{{ title }}{% else %}{{ metadata.site_title }}{% endif %}</title>
-		<meta name="description" content="{% if description %}{{ description }}{% else %}{{ metadata.site_description }}{% endif %}">
+		
+		<title>{% if title %}{{ title }}{% else %}{{ config.site.title }}{% endif %}</title>
+		<meta name="description" content="{% if description %}{{ description }}{% else %}{{ config.site.description }}{% endif %}">
 		<!-- Favicons -->
 		<link rel="apple-touch-icon" href="/static/favicon-apple.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
 
 		<!-- Open Graph -->
-		<meta property="og:url" content="{{ metadata.site_url }}{{ page.url }}">
+		<meta property="og:url" content="{{ config.site.url }}{{ page.url }}">
 		<meta property="og:type" content="website">
-		<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ metadata.site_title }}{% endif %}">
-		<meta property="og:image" content="{% if cover %}{{ metadata.site_url }}{{ page.url | url }}{{ cover }}{% else %}{{ metadata.site_url }}/static/opengraph-cover.jpg{% endif %}"/>
-		<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ metadata.site_description }}{% endif %}"/>
-		<meta property="og:site_name" content="{{ metadata.site_title }}">
+		<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ config.site.title }}{% endif %}">
+		<meta property="og:image" content="{% if cover %}{{ config.site.url }}{{ page.url | url }}{{ cover }}{% else %}{{ config.site.url }}/static/opengraph-cover.jpg{% endif %}"/>
+		<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ config.site.description }}{% endif %}"/>
+		<meta property="og:site_name" content="{{ config.site.title }}">
 		<meta property="og:locale" content="en_US">
 
 		<!-- Twitter -->

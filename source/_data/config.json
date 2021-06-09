@@ -1,0 +1,8 @@
+{
+  "site": {
+		"title": "Eleventy Web Starter",
+		"description": "Eleventy Web Starter is a lightweight Eleventy boilerplate designed to be simple but robust.",
+		"author": "Chris Collins",
+		"url": "https://eleventywebstarter.netlify.app"
+	}
+}

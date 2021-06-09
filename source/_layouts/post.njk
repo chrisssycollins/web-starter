@@ -3,12 +3,26 @@ layout: "base.njk"
 ---
 
 <div class="container">
-	<header>
-		<h1 class="post-title">{{ title }}</h1>
+	<header class="post-header">
+		<h1 class="post-header__title">{{ title }}</h1>
 
-		<div class="post-meta">
+		<div class="post-header__meta">
 			<p>Posted <time datetime="{{ date }}">{{ date | postDate }}</time> · by {{ author.name }}</p>
 		</div>
+
+		{% if featured_image.src %}
+		<figure>
+			<img src="{{ page.url }}{{ featured_image.src }}" alt="{{ featured_image.alt }}">
+
+			{% if featured_image.caption or featured_image.cite %}
+			<figcaption>
+				{{ featured_image.caption }}
+				{% if featured_image.caption | safe %}
+					<cite>{{ featured_image.cite | safe }}</cite>
+				{% endif %}
+			</figcaption>
+			{% endif %}
+		{% endif %}
 	</header>
 
 	<article>

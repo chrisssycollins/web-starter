@@ -63,11 +63,6 @@ a:hover {
   font-size: 1.2rem;
 }
 
-.navigation a>img {
-  width: 1.6rem;
-  margin-right: 0.5rem;
-}
-
 .navigation ul {
   margin: 0 -0.5rem;
   display: flex;
@@ -78,6 +73,12 @@ a:hover {
 .navigation ul li a {
   padding: 0.5rem 0.5rem;
   display: block;
+	text-decoration: none;
+}
+
+.navigation ul li a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.15rem;
 }
 
 .post-list {
@@ -96,12 +97,16 @@ a:hover {
   color: var(--muted);
 }
 
-.post-title {
+.post-header {
+  padding: 3rem 0;
+}
+
+.post-header__title {
   line-height: 1.25;
   font-weight: 700;
 }
 
-.post-meta {
+.post-header__meta {
   font-size: 0.75em;
   margin-top: 0;
   color: var(--muted);
@@ -126,6 +131,39 @@ pre {
   background-color: var(--lightest);
   padding: 1rem;
   border-radius: var(--border-radius);
+}
+
+figure {
+	max-width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+figure img {
+  max-width: 100%;
+}
+
+figure figcaption {
+	text-align: center;
+  font-size: 0.75rem;
+}
+
+figure figcaption cite {
+	color: var(--muted);
+	display: block;
+	font-style: normal;
+	font-size: 0.8em;
+}
+
+figure figcaption cite a,
+figure figcaption cite a:visited {
+  color: var(--muted);
+}
+
+.footer {
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+	font-size: 0.765rem;
 }
 
 @media only screen and (min-width: 600px) {

@@ -5,8 +5,9 @@ const htmlmin = require("html-minifier");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("source/static");
+  eleventyConfig.addPassthroughCopy("source/posts/**/*.{jpeg,jpg,png}");
 
-  // Collections
+	// Collections
   // tagList: Returns an array of all tags used
   eleventyConfig.addCollection("tagList", function (collectionApi) {
     let tagSet = new Set();

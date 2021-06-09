@@ -1,5 +1,5 @@
 ---
-title: Why use Eleventy as a static site generator?
+title: An example post written in Markdown
 description: 
 date: 2021-06-20
 
@@ -8,12 +8,13 @@ author:
 
 featured_image: 
  src: cover.jpg
- alt: ""
- caption: "" 
- cite: ""
+ alt: "Jacobite Steam Train going over the Glenfinnan viaduct"
+ caption: Jacobite Steam Train going over the Glenfinnan viaduct, Scotland.
+ cite: 'Photo by <a href="https://unsplash.com/@woolyart">BK</a> on <a href="https://unsplash.com/s/photos/scotland">Unsplash</a>'
 
 tags:
- - tag
+ - example
+ - markdown
 ---
 
 ## Overview

@@ -2,7 +2,7 @@
   --font-color: #222;
   --brand: #0065C3;
   --brand-tint: #005bb0;
-  --background-color: #fdfdfd;
+  --background-color: #fff;
   --solid: #fff;
   --link-color: #222;
   --muted: #767676;
@@ -60,6 +60,7 @@ a:hover {
   align-items: center;
   font-weight: 700;
   text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .navigation a>img {
@@ -96,14 +97,14 @@ a:hover {
 }
 
 .post-title {
-	line-height: 1.25;
-	font-weight: 700;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
 .post-meta {
-	font-size: 0.75em;
-	margin-top: 0;
-	color: var(--muted);
+  font-size: 0.75em;
+  margin-top: 0;
+  color: var(--muted);
 }
 
 :not(pre)>code {
